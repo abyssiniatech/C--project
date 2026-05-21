@@ -1,46 +1,10 @@
-﻿using System;
-
-class Program
+﻿List<Student> students = new List<Student>();
+students.Add(new Student { Id = "1", name = "Alice", Age = 20, Gpa = 3.5m });
+students.Add(new Student { Id = "2", name = "Bob", Age = 22, Gpa = 3.8m });
+foreach (var student in students)
 {
-    static void Main()
-    {
-        Console.Write("Enter the first number: ");
-        double num1 = Convert.ToDouble(Console.ReadLine());
-
-        Console.Write("Enter the operator (+, -, *, /): ");
-        string op = (Console.ReadLine() ?? string.Empty).Trim();
-
-        Console.Write("Enter the second number: ");
-        double num2 = Convert.ToDouble(Console.ReadLine());
-
-        if (op == "+")
-        {
-            Console.WriteLine("Result: " + (num1 + num2));
-        }
-        else if (op == "-")
-        {
-            Console.WriteLine("Result: " + (num1 - num2));
-        }
-        else if (op == "*")
-        {
-            Console.WriteLine("Result: " + (num1 * num2));
-        }
-        else if (op == "/")
-        {
-            if (num2 != 0)
-            {
-                Console.WriteLine("Result: " + (num1 / num2));
-            }
-            else
-            {
-                Console.WriteLine("Cannot divide by zero.");
-            }
-        }
-        else
-        {
-            Console.WriteLine("Invalid operator.");
-        }
-
-        Console.ReadLine();
-    }
+    Console.WriteLine($"Id: {student.Id}, Name: {student.name}, Age: {student.Age}, Gpa: {student.Gpa}");
 }
+
+// where students
+students.Where(s => s.Age > 21).ToList().ForEach(s => Console.WriteLine($"Id: {s.Id}, Name: {s.name}, Age: {s.Age}, Gpa: {s.Gpa}"));
