@@ -1,7 +1,7 @@
 public class Student
 {
     public string Id;
-    public string name;
+    public string Name;
     public int Age;
     public decimal Gpa;
 }

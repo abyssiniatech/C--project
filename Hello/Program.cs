@@ -1,10 +1,16 @@
-﻿List<Student> students = new List<Student>();
-students.Add(new Student { Id = "1", name = "Alice", Age = 20, Gpa = 3.5m });
-students.Add(new Student { Id = "2", name = "Bob", Age = 22, Gpa = 3.8m });
-foreach (var student in students)
+﻿List<Student> students = [
+    new Student { Id = "1", Name = "Alice", Age = 20, Gpa = 3.5m },
+    new Student { Id = "2", Name = "Bob", Age = 22, Gpa = 3.8m },
+    new Student { Id = "3", Name = "Charlie", Age = 19, Gpa = 3.2m }
+
+];
+var topStudent = students.OrderByDescending(s => s.Gpa).FirstOrDefault();
+if (topStudent != null)
 {
-    Console.WriteLine($"Id: {student.Id}, Name: {student.name}, Age: {student.Age}, Gpa: {student.Gpa}");
+    Console.WriteLine($"Top student: {topStudent.Name} with GPA: {topStudent.Gpa}");
+}
+else
+{
+    Console.WriteLine("No students found.");
 }
 
-// where students
-students.Where(s => s.Age > 21).ToList().ForEach(s => Console.WriteLine($"Id: {s.Id}, Name: {s.name}, Age: {s.Age}, Gpa: {s.Gpa}"));
