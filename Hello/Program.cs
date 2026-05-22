@@ -1,10 +1,9 @@
-﻿public class Surafel
-{
-    public static void Main()
-    {
-        Random Rand = new Random();
-        var b = Rand.Next(1, 24);
-        Console.WriteLine(b);
+﻿// inter input from the keyword then display it 
+public class Input{
+    public static void Main(){
+        Console.Write("Enter the age:");
+        int age=Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine($"I'm : {age} years old");
         Console.ReadKey();
     }
 }
