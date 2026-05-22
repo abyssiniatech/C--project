@@ -1,21 +1,14 @@
-﻿
-    using System;
-class Program
+﻿class Hello
 {
-    static void Main()
+    public static void Main()
     {
-        int age = 25;
-        double height = 5.9;
-        char grade = 'A';
-        bool isStudent = true;
-        string name = "Surafel";
-        decimal salary = 5000.75m;
-
-        Console.WriteLine(age);
-        Console.WriteLine(height);
-        Console.WriteLine(grade);
-        Console.WriteLine(isStudent);
-        Console.WriteLine(name);
-        Console.WriteLine(salary);
+        int num1 = 40;
+        int b = (int)Math.Pow(num1, 3);
+        int c = (int)Math.Floor(34.345m);
+        var d=Convert.ToDecimal(c);
+        Console.WriteLine($"The value of :{b}");
+        Console.WriteLine($"Floor is :{b}");
+        Console.WriteLine($"Covertor: {d}");
+        Console.ReadLine();
     }
 }
