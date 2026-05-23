@@ -1,37 +1,65 @@
 ﻿using System;
 
-class Swichcase
+namespace MyFirstProgram
 {
-    public static void Main()
+    class Program
     {
-      Console.Write("Enter day:");
-      string day = Console.ReadLine() ?? string.Empty;
-      switch (day)
-      {
-        case "Monday":
-           Console.WriteLine($" The day was:Monday");
-           break;
-        case "Tuesday":
-           Console.WriteLine($"Tuesday");
-           break;
-        case "Wednesday":
-           Console.WriteLine($"Wednesday");
-           break;
-        case "Thursday":
-           Console.WriteLine($"Thursday");
-           break;
-        case "Friday":
-           Console.WriteLine("Friday");
-           break;
-        case "Saturday":
-           Console.WriteLine($"Saturday");
-           break;
-        case "Sunday":
-           Console.WriteLine($"Sunday");
-           break;
-        default:
-          Console.WriteLine($"invalid input");
-          break;
-      }
+        static void Main(string[] args)
+        {
+            Random random = new Random();
+            bool playAgain = true;
+            int min = 1;
+            int max = 100;
+            int guess;
+            int number;
+            int guesses;
+            String response;
+
+            while (playAgain)
+            {
+                guess = 0;
+                guesses = 0;
+                response = "";
+                number = random.Next(min, max + 1);
+
+                while (guess != number)
+                {
+                    Console.WriteLine("Guess a number between " + min + " - " + max + " : ");
+                    guess = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Guess: " + guess);
+
+                    if (guess > number)
+                    {
+                        Console.WriteLine(guess + " is to high!");
+                    }
+                    else if (guess < number)
+                    {
+                        Console.WriteLine(guess + " is to low!");
+                    }
+                    guesses++;
+                }
+                Console.WriteLine("Number: " + number);
+                Console.WriteLine("YOU WIN!");
+                Console.WriteLine("Guesses: " + guesses);
+
+                Console.WriteLine("Would you like to play again (Y/N): ");
+                response = Console.ReadLine() ?? "";
+                response = response.ToUpper();
+
+                if (response == "Y")
+                {
+                    playAgain = true;
+                }
+                else
+                {
+                    playAgain = false;
+                }
+            }
+
+            Console.WriteLine("Thanks for playing! ... I guess");
+
+            Console.ReadKey();
+        }
     }
 }
+
