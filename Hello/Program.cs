@@ -4,7 +4,10 @@ class Program
 {
     static void Main(string[] args)
     {
-        string[] car ={"chevrolte","BMW","Toyota"};
-        System.Console.WriteLine(car[0]);
+        string[] car ={"chevrolte","BMW","Toyota","RAva4"};
+          foreach (var item in car)
+          {
+            Console.WriteLine(item); 
+          }
     }
 }
