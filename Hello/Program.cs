@@ -1,9 +1,17 @@
-﻿// inter input from the keyword then display it 
-public class Input{
-    public static void Main(){
-        Console.Write("Enter the age:");
-        int age=Convert.ToInt32(Console.ReadLine());
-        Console.WriteLine($"I'm : {age} years old");
-        Console.ReadKey();
+﻿ public class Condition
+
+{
+    public static void Main()
+    {
+        Console.Write("Enter Your age: ");
+        int Age = Convert.ToInt32(Console.ReadLine());
+        if (Age >= 18)
+        {
+            Console.WriteLine($"you can login the website: {Age}");
+        }
+        else
+        {
+            Console.WriteLine($"you can not login the website: {Age}");
+        }
     }
 }
