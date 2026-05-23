@@ -1,13 +1,6 @@
 ﻿using System;
-class Program
-{
-    static void Main(string[] args)
-    {
-        for(int i=0; i <= 10; i++)
-        {
-            Console.WriteLine($"The value of i is : {i}");
-        }
-      
-      
-    }
+int i = 0;
+while (i <= 10){
+    Console.WriteLine($"the value of i is :{i}");
+    i++;
 }
