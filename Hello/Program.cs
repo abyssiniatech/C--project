@@ -1,9 +1,10 @@
 ﻿using System;
 class Program {
-    static void Main(){
-        int temp=20;
-        string message;
-        message=(temp>=15) ? "it's cold" :"it's hot";
-        Console.WriteLine(message);
+    static void Main()
+    {
+        // string interpolutions
+        string name="surafel";
+        int age=24;
+        Console.WriteLine($"my name is {name} and i am {age} years old");
     }
 }
