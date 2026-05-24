@@ -13,7 +13,7 @@ class Program
            int result =num1/num2;
            Console.WriteLine(result);
         }
-        catch (UriFormatException ex)
+        catch (FormatException ex)
         {
             Console.WriteLine("Please enter number only");
             Console.WriteLine(ex.Message);
