@@ -1,10 +1,12 @@
 ﻿using System;
-public class Program
+
+class Program
 {
     static void Main()
     {
-       Info.greet();
-       Info.wait();
-       Info.finish();
+        string name = "Surafel";
+        int age = 23;
+
+        Console.WriteLine($"My name is {name} and I am {age} years old.");
     }
 }
