@@ -1,27 +1,70 @@
 ﻿using System;
+
+class BankAccount
+{
+    private decimal balance;
+
+    public BankAccount(decimal initialBalance)
+    {
+        if (initialBalance < 0)
+        {
+            throw new ArgumentException("Initial balance cannot be negative.");
+        }
+
+        balance = initialBalance;
+    }
+
+    public void Withdraw(decimal amount)
+    {
+        try
+        {
+            if (amount <= 0)
+            {
+                throw new ArgumentException("Withdrawal amount must be greater than zero.");
+            }
+
+            if (amount > balance)
+            {
+                throw new InvalidOperationException("Insufficient balance.");
+            }
+
+            balance -= amount;
+
+            Console.WriteLine($"Withdrawal successful. Remaining balance: {balance:C}");
+        }
+        catch (ArgumentException ex)
+        {
+            Console.WriteLine($"Input Error: {ex.Message}");
+        }
+        catch (InvalidOperationException ex)
+        {
+            Console.WriteLine($"Transaction Error: {ex.Message}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Unexpected Error: {ex.Message}");
+        }
+        finally
+        {
+            Console.WriteLine("Transaction completed.");
+        }
+    }
+}
+
 class Program
 {
     static void Main()
     {
         try
         {
-           Console.Write("enter num1:");
-           int num1=Convert.ToInt32(Console.ReadLine());
+            BankAccount account = new BankAccount(1000);
 
-            Console.Write("enter num2:");
-           int num2=Convert.ToInt32(Console.ReadLine());
-           int result =num1/num2;
-           Console.WriteLine(result);
+            account.Withdraw(500);
+            account.Withdraw(2000);
         }
-        catch (FormatException ex)
+        catch (Exception ex)
         {
-            Console.WriteLine("Please enter number only");
-            Console.WriteLine(ex.Message);
+            Console.WriteLine($"Fatal Error: {ex.Message}");
         }
-        finally
-        {
-            Console.WriteLine("Run the server as expected");
-    
     }
-}
 }
