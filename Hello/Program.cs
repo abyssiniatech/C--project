@@ -1,20 +1,22 @@
 ﻿using System;
 
-  
- class Program
+class Program
 {
-     static void Main(string[] args)
+    static void Main(string[] args)
     {
-        int age = 23;
-        string name = "Surafel Mengist";
-         Greet(age,name);
+        Sums();
     }
-     static void Greet(int age, string name)
+
+    static double Sums()
     {
-        Console.WriteLine($"Hi everybody are you fine  :{name}");
-        Console.WriteLine($"Hi everybody i'm : {age} years old");
-        Console.WriteLine("Hi everybody are you fine");
+        Console.Write("Enter the value of x: ");
+        
+        double x = Convert.ToDouble(Console.ReadLine());
+
+        double sum = x * 12;
+
+        Console.WriteLine($"The value of sum is = {sum}");
+
+        return sum;
     }
 }
-
-
