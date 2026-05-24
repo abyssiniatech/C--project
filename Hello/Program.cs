@@ -1,13 +1,12 @@
 ﻿using System;
-// array in c#
+
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        string[] car ={"chevrolte","BMW","Toyota","RAva4"};
-          foreach (var item in car)
-          {
-            Console.WriteLine(item); 
-          }
+        string name = "Surafel";
+        int age = 23;
+
+        Console.WriteLine($"My name is {name} and I am {age} years old.");
     }
 }
