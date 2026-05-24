@@ -2,21 +2,23 @@
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Sums();
-    }
+        try
+        {
+            int num1 = 10;
+            int num2 = 0;
 
-    static double Sums()
-    {
-        Console.Write("Enter the value of x: ");
-        
-        double x = Convert.ToDouble(Console.ReadLine());
+            int result = num1 / num2;
 
-        double sum = x * 12;
+            Console.WriteLine(result);
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Error: Cannot divide by zero.");
+            Console.WriteLine(ex.Message);
+        }
 
-        Console.WriteLine($"The value of sum is = {sum}");
-
-        return sum;
+        Console.WriteLine("Program continues...");
     }
 }
