@@ -5,11 +5,16 @@
 using System;
 class Program {
     static void Main(string[] args){
-    //    conditional operator
-    int age=34;
-     string info=(age>=18) ? "You are an adult" : "You are a minor";
-     Console.WriteLine(info);
+      string region="Addis Ababa";
     
+        if ( region!= null)
+        {
+            Console.WriteLine(region.ToUpper());
+        }
+        else
+        {
+            Console.WriteLine("Null Value");
+        }
 
     }
 }
